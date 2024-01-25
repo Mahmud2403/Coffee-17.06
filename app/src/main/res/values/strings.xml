@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Coffee 17.06</string>
+    <string name="http_status_unknown_developer_message">Unknown Error</string>
+</resources>
