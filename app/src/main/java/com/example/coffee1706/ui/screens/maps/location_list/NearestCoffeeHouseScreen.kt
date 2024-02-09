@@ -1,7 +1,6 @@
-package com.example.coffee1706.ui.screens.maps
+package com.example.coffee1706.ui.screens.maps.location_list
 
 import android.annotation.SuppressLint
-import android.health.connect.datatypes.ExerciseRoute.Location
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -19,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.coffee1706.common.CoffeeButton
 import com.example.coffee1706.common.CoffeeTopAppBar
+import com.example.coffee1706.ui.screens.maps.LocationUiState
 import com.example.coffee1706.ui.screens.maps.components.CoffeeHouseCard
 import com.example.coffee1706.ui.theme.BaseTextColor
 import com.example.coffee1706.utils.clickableWithRipple

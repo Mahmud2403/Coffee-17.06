@@ -21,11 +21,25 @@ class NearestCoffeeHouseViewModel @Inject constructor(
 	private val _locationUiState = MutableStateFlow(LocationUiState())
 	val locationUiState = _locationUiState.asStateFlow()
 
+	private val _mapPlaceStateFlow = MutableStateFlow<List<LocationDto>>(emptyList())
+	val mapPlaceStateFlow = _mapPlaceStateFlow.asStateFlow()
+
 	init {
+		getLocation()
 		getCoffeeHouse()
 	}
 
-	fun getLocation() {}
+	fun getLocation() {
+		viewModelScope.launch {
+			coffeeRepository.getLocationCoffee().collectAsResult(
+				onSuccess = { place ->
+					_mapPlaceStateFlow.update {
+						place
+					}
+				}
+			)
+		}
+	}
 
 	private fun getCoffeeHouse() {
 		viewModelScope.launch {

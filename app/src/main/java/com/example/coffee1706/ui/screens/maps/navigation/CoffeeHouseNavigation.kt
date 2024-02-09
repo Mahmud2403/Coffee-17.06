@@ -6,11 +6,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.example.coffee1706.base.navigation.CoffeeNavigationDestination
-import com.example.coffee1706.ui.screens.maps.NearestCoffeeHouseScreen
+import com.example.coffee1706.ui.screens.maps.location_list.NearestCoffeeHouseScreen
 import com.example.coffee1706.ui.screens.maps.NearestCoffeeHouseViewModel
 import com.example.coffee1706.ui.screens.maps.location_map.CoffeeLocationMapScreen
 import com.example.coffee1706.ui.screens.menu.navigation.CoffeeMenuNavigation
-import com.yandex.mapkit.mapview.MapView
 
 object CoffeeHouseListNavigation : CoffeeNavigationDestination {
 	override val route = "coffee_house_list_route"
@@ -31,7 +30,6 @@ fun NavGraphBuilder.nearestCoffee(
 	) {
 		val viewModel = hiltViewModel<NearestCoffeeHouseViewModel>()
 		val uiState by viewModel.locationUiState.collectAsStateWithLifecycle()
-
 		NearestCoffeeHouseScreen(
 			onClickMaps = {
 				navigateTo(
@@ -58,6 +56,7 @@ fun NavGraphBuilder.nearestCoffee(
 
 		CoffeeLocationMapScreen(
 			uiState = uiState,
+			onClickBack = onClickBack
 		)
 	}
 }

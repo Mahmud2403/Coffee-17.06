@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:background="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/imageRootContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/imageContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+<!--            android:background="@drawable/image_border"-->
+        >
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:scaleType="centerCrop" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/coffee_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/basic_text_color"
+            android:layout_below="@id/imageContainer"
+            android:layout_centerHorizontal="true"/>
+
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="12dp"
+            android:layout_below="@id/coffee_name"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/triangle" />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageRootContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp">
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/circular_shape" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/inner_circular_shape" />
+    </FrameLayout>
+</RelativeLayout>

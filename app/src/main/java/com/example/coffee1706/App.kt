@@ -8,7 +8,6 @@ import dagger.hilt.android.HiltAndroidApp
 class App: Application(){
 	override fun onCreate() {
 		MapKitFactory.setApiKey("ed85d1d2-c0b0-4642-a201-bd55f2d04472")
-		MapKitFactory.initialize(this)
 		super.onCreate()
 	}
 }

@@ -12,6 +12,7 @@ import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import androidx.navigation.navigation
 import com.example.coffee1706.base.navigation.CoffeeNavigationDestination
+import com.example.coffee1706.ui.screens.maps.navigation.CoffeeHouseListNavigation
 import com.example.coffee1706.ui.screens.menu.CoffeeMenuScreen
 import com.example.coffee1706.ui.screens.menu.CoffeeMenuViewModel
 import com.example.coffee1706.ui.screens.pay.CoffeePayScreen
@@ -66,7 +67,9 @@ fun NavGraphBuilder.coffeeMenu(
 			}
 			val viewModel = hiltViewModel<CoffeeMenuViewModel>(parentEntry)
 			CoffeePayScreen(
-				onClickBack = onClickBack,
+				onClickBack = {
+					navigateTo(CoffeeHouseListNavigation, null)
+				},
 				viewModel = viewModel
 			)
 		}
